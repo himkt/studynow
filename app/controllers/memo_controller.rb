@@ -1,0 +1,2 @@
+class MemoController < ApplicationController
+end
