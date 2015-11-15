@@ -1,8 +1,7 @@
 class MainController < ApplicationController
   def index
-    if params["flash"]
-       @update = true
-    end
+    @update = true if params["flash"] == "updated"
+    @overed = true if params["flash"] == "overed"
   end
 
   def update
@@ -12,11 +11,14 @@ class MainController < ApplicationController
       config.access_token        = session[:oauth_token]
       config.access_token_secret = session[:oauth_token_secret]
     end
-    unless params[:text] == ""
+
+    if params[:text].size == 0
+      redirect_to :action => "index"
+    elsif params[:text].size >= 140
+      redirect_to :action => "index", :flash => "overed"
+    else
       client.update(params[:text])
       redirect_to :action => "index", :flash => "updated"
-    else
-      redirect_to :action => "index"
     end
   end
 end

@@ -4,6 +4,12 @@
     学びが共有されました
   </div>
 <% end %>
+<% if @overed %>
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    文字数オーバー
+  </div>
+<% end %>
 
 <div class="form">
   <%= form_tag( {action: :update}) do %>
