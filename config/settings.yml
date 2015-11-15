@@ -8,7 +8,12 @@ development:
 
 test:
   <<: *defaults
+  twitter:
+    consumer_key: <%= ENV["CONSUMER_KEY"] %>
+    consumer_secret: <%= ENV["CONSUMER_SECRET"] %>
 
 production:
   <<: *defaults
-
+  twitter:
+    consumer_key: <%= ENV["CONSUMER_KEY"] %>
+    consumer_secret: <%= ENV["CONSUMER_SECRET"] %>
