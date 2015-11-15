@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Studynow</title>
+  <title>Study Now</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render 'layouts/header' %>
+  <div class="container" id="main">
+    <% if current_user %>
+      <%= yield %>
+    <% else %>
+      <h4>学びを共有するにはログインが必要です</h4>
+    <% end %>
+  </div>
 </body>
 </html>

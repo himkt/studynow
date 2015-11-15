@@ -1,0 +1,13 @@
+<% if @update %>
+  <div class="alert alert-success" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    学びが共有されました
+  </div>
+<% end %>
+
+<div class="form">
+  <%= form_tag( {action: :update}) do %>
+    <%= text_field_tag :text, '', class: "form-control", placeholder: "ここに学びを入力します" %>
+    <%= submit_tag '学びをつぶやく', class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

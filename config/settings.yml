@@ -1,0 +1,14 @@
+defaults: &defaults
+
+development:
+  <<: *defaults
+  twitter:
+    consumer_key: <%= ENV["CONSUMER_KEY"] %>
+    consumer_secret: <%= ENV["CONSUMER_SECRET"] %>
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

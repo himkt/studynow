@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Study Now</a>
+    <% if current_user %>
+      <a class="navbar-brand" href="#"><%= current_user.name %></a>
+    <% end %>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li><%= link_to 'ログアウト', logout_path %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', '/auth/twitter' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</nav>
