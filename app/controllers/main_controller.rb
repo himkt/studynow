@@ -18,6 +18,7 @@ class MainController < ApplicationController
       redirect_to :action => "index", :flash => "overed"
     else
       client.update(params[:text])
+      Memo.create({"user_id" => session[:user_id], "text" => params[:text]})
       redirect_to :action => "index", :flash => "updated"
     end
   end

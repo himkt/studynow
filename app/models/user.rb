@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  belongs_to :memo
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth['provider']
