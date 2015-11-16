@@ -13,7 +13,7 @@
 
 <div class="form">
   <%= form_tag( {action: :update}) do %>
-    <%= text_area_tag :text, '', class: "form-control", placeholder: "ここに学びを入力します" %>
+    <%= text_area_tag :text, '', class: "form-control", placeholder: "ここに学びを入力します", rows: 4 %>
     <%= submit_tag '学びをつぶやく', id: "tweet-button", class: "btn btn-large btn-primary" %>
     <span id="text-count" class="badge"></span>
   <% end %>
