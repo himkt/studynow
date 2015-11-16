@@ -15,5 +15,6 @@
   <%= form_tag( {action: :update}) do %>
     <%= text_field_tag :text, '', class: "form-control", placeholder: "ここに学びを入力します" %>
     <%= submit_tag '学びをつぶやく', class: "btn btn-large btn-primary" %>
+    <span id="text-count" class="badge"></span>
   <% end %>
 </div>
