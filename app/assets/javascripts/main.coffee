@@ -13,7 +13,7 @@ updateCountdown = ->
   return
 
 $ ->
-  $('#text')
+  $ '#text'
     .ready updateCountdown
     .change updateCountdown
     .keyup updateCountdown
