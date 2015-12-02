@@ -22,3 +22,4 @@
 
 # Ignore ENV file
 .env
+!.env.sample
