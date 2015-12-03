@@ -215,6 +215,7 @@ DEPENDENCIES
   pg
   pygments.rb
   rails (= 4.2.5)
+  rails-html-sanitizer
   redcarpet
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

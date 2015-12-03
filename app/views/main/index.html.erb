@@ -1,9 +1,10 @@
 <div class="form">
-  <%= form_tag( {action: :update}) do %>
+  <%= form_tag( {action: :confirm}) do %>
     <%= text_field_tag :title, '', class: "form-control", placeholder: "タイトル" %>
     <%= text_field_tag :author, '', class: "form-control", placeholder: "著者" %>
+    <%= text_field_tag :conference, '', class: "form-control", placeholder: "会議" %>
     <%= number_field_tag :publish_year, '', class: "form-control", placeholder: "出版年", min: 1000, max: 2015 %>
-    <%= text_area_tag :text, @template, class: "form-control", rows: 20, style: "margin-left: 5px;" %>
+    <%= text_area_tag :body, @template, class: "form-control", rows: 20, style: "margin-left: 5px;" %>
     <%= submit_tag '学びを共有する', id: "tweet-button", class: "btn btn-large btn-primary" %>
     <span id="text-count" class="badge"></span>
   <% end %>

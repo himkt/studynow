@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+  }
+});

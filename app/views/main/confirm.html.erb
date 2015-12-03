@@ -1,0 +1,9 @@
+<h1>知見</h1>
+
+<div class="container">
+  <%= simple_format(Markdown.new(session['body']).to_html) %>
+
+  <%= form_tag({action: "upload"}) do %>
+    <%= submit_tag '送信', class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

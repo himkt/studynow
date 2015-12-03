@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'main#index'
 
   get "main/index"
-  post 'main/update'
+  post 'main/confirm'
+  post 'main/upload'
 
   get '/auth/:provider/callback', :to => 'sessions#callback'
   post '/auth/:provider/callback', :to => 'sessions#callback'
