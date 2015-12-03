@@ -8,9 +8,7 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="/">Study Now</a>
-    <% if current_user %>
-      <a class="navbar-brand" href="#"><%= current_user.name %></a>
-    <% end %>
+    <a class="navbar-brand" href="/entry/index">Brows</a>
   </div>
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
@@ -20,6 +18,9 @@
         <li><%= link_to 'ログイン', '/auth/twitter' %></li>
       <% end %>
     </ul>
+    <% if current_user %>
+      <a class="navbar-right navbar-brand" href="#"><%= current_user.name %></a>
+    <% end %>
   </div>
 </div>
 </nav>

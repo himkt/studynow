@@ -24,5 +24,10 @@ class MainController < ApplicationController
       conference:  session['conference'],
       publish_year: session['publish_year']
     })
+    session['body'] = nil
+    session['title'] = nil
+    session['author'] = nil
+    session['conference'] = nil
+    session['publish_year'] = nil
   end
 end

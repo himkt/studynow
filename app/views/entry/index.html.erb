@@ -1,0 +1,4 @@
+<% @entries.each do |entry| %>
+  <a href="detail/<%= entry['id'] %>"><%= entry['title'] %></a>
+  <%= entry['author'] %>
+<% end %>
