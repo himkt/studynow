@@ -3,21 +3,19 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 updateCountdown = ->
-  _tweet = $ '#text'
-  _tweetCount = $ '#text-count'
-  _tweetButton = $ '#tweet-button'
-
-  current_length = _tweet.val().length
+  _body = $ '#body'
+  _bodyCount = $ '#text-count'
+  _bodyButton = $ '#body-button'
 
 
-  _tweetCount.text current_length
+  current_length = _body.val().length
+
+  _bodyCount.text current_length
   return
 
 $ ->
-  $ '#text'
+  $ '#body'
     .ready updateCountdown
     .change updateCountdown
     .keyup updateCountdown
   return
-
-
