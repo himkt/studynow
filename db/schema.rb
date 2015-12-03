@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116001515) do
+ActiveRecord::Schema.define(version: 20151203034843) do
 
   create_table "memos", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,10 +24,9 @@ ActiveRecord::Schema.define(version: 20151116001515) do
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
-    t.string   "screen_name"
     t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
