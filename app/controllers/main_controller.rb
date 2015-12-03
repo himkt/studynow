@@ -8,9 +8,9 @@ class MainController < ApplicationController
 
     full_sanitizer = Rails::Html::FullSanitizer.new
     session['body'] = full_sanitizer.sanitize(params['body'])
-    session['title'] = params['title']
-    session['author'] = params['author']
-    session['conference'] = params['conference']
+    session['title'] = full_sanitizer.sanitize(params['title'])
+    session['author'] = full_sanitizer.sanitize(params['author'])
+    session['conference'] = full_sanitizer.sanitize(params['conference'])
     session['publish_year'] = params['publish_year']
   end
 
