@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203034843) do
+ActiveRecord::Schema.define(version: 20151203040052) do
 
-  create_table "memos", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "entries", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "document_id"
-    t.text     "text"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "body"
+    t.integer  "category_id"
+    t.string   "title"
+    t.string   "author"
+    t.string   "conference"
+    t.integer  "publish_year"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
