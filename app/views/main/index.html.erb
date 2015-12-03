@@ -1,20 +1,7 @@
-<% if @update %>
-  <div class="alert alert-success" role="alert">
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    学びが共有されました
-  </div>
-<% end %>
-<% if @overed %>
-  <div class="alert alert-danger" role="alert">
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    文字数オーバー
-  </div>
-<% end %>
-
 <div class="form">
   <%= form_tag( {action: :update}) do %>
     <%= text_area_tag :text, '', class: "form-control", placeholder: "ここに学びを入力します", rows: 4 %>
-    <%= submit_tag '学びをつぶやく', id: "tweet-button", class: "btn btn-large btn-primary" %>
+    <%= submit_tag '学びを共有する', id: "tweet-button", class: "btn btn-large btn-primary" %>
     <span id="text-count" class="badge"></span>
   <% end %>
 </div>
