@@ -1,4 +1,8 @@
 class Entry < ActiveRecord::Base
+  validates :user_id, presence: true
+  validates :title,  length: { minimum: 1 }
+  validates :author, presence: true
+
   def self.get_all_entries
     return Entry.all
   end

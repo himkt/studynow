@@ -1,0 +1,5 @@
+<div class="container">
+  <p>タイトル: <%= @entry['title'] %></p>
+  <p>著者: <%= @entry['author'] %></p>
+  <%= simple_format(Markdown.new(@entry['body']).to_html) %>
+</div>

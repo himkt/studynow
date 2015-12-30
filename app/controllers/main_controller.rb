@@ -1,7 +1,15 @@
 class MainController < ApplicationController
   
   def index
+    @entries = Entry.get_all_entries.page(params[:page])
+  end
+
+  def create
     @template = Constants::TEMPLATE
+  end
+
+  def detail
+    @entry = Entry.get_entry_by_id params['id']
   end
 
   def confirm
@@ -16,7 +24,7 @@ class MainController < ApplicationController
 
   def upload
 
-    Entry.create({
+    @entry = Entry.create({
       user_id: session[:user_id],
       body: session['body'],
       title: session['title'],
@@ -24,10 +32,13 @@ class MainController < ApplicationController
       conference:  session['conference'],
       publish_year: session['publish_year']
     })
-    session['body'] = nil
-    session['title'] = nil
-    session['author'] = nil
-    session['conference'] = nil
-    session['publish_year'] = nil
+
+    if @entry
+      session['body'] = nil
+      session['title'] = nil
+      session['author'] = nil
+      session['conference'] = nil
+      session['publish_year'] = nil
+    end
   end
 end
