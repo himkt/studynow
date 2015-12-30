@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'main#index'
 
-  get "main/index"
-  get 'entry/index'
-  get 'entry/detail/:id' => 'entry#detail'
+  get 'main/create'
+  get 'main/detail/:id' => 'main#detail'
+
   post 'main/confirm'
   post 'main/upload'
 
